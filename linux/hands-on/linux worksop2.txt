@@ -1,0 +1,361 @@
+
+Code Along
+
+1. Open the terminal
+   
+2. To know which directory you are in, you can use the “pwd” command.
+   pwd
+
+3. Create a directory named "ABC_College" in user's home directory.
+   mkdir ABC_Collage
+
+4. Go into "ABC_College" directory.
+   cd  ABC_Collage
+
+5. List all the files/folders with details in ABC_College directory.
+   ls- al
+   ls -a
+
+6. Create folders named "Futsal", "Basketball" and "Swimming".
+    
+    mkdir  mkdir Futsal Basketball Swimming
+
+7. Go into "Futsal" directory and list content of the directory with details and hidden files.
+   cd Futsal 
+   ls -al 
+
+8. Create folders named "Futsal_Women" and "Futsal_Men after that list the content of "Futsal".
+   
+   mkdir Futsal_Women Futsal_Men
+   ls
+
+9. Go into "Basketball" directory from inside "Futsal" directory and list content of "Basketball" directory with
+details and hidden files.
+  
+   cd ../Basketball/
+   ls -al
+
+10. Create folders named "Basketball_Women" and "Basketball_Men after that list the content of "Basketball".
+    
+    mkdir Basketball_Women Basketball_Men
+
+11. Go into "Swimming" directory from inside "Basketball" directory and list content of "Swimming" directory
+with details and hidden files.
+
+     cd ../Swimming/
+     ls -al
+
+12. Create folders named "Swimming_Women" and "Swimming_Men after that list the content of "Swimming".
+
+    mkdir Swimming_Women Swimming_Men
+    ls
+
+13. Print and check the path of the directory you are in.
+    pwd
+
+14. Go into "Swimming_Women" directory.
+
+    cd Swimming_Women
+
+15. Create folders named "Freestyle" and "Butterfly" in "Swimming_Women".
+
+    mkdir Freestyle  Butterfly
+
+16. Go into "Swimming_Men" directory from inside "Swimming_Women" directory.
+
+    cd ../Swimming_Men
+
+17. Create folders named "Freestyle" and "Butterfly" in "Swimming_Men".
+
+    mkdir Freestyle  Butterfly
+
+18. Go into "Futsal_Women" directory again from inside "Swimming_Men" directory and list the content of
+"Futsal_Women".
+
+     cd ../../Futsal/Futsal_Women
+     ls
+
+19. Create 5 files named "Emma", "Olivia", "  ", "Mia", "Sophia" inside "Futsal_Women".
+
+     touch Emma Isabella Mia Sophia Olivia
+
+
+20. Write the students' informations using "echo" command into the files according to the table given below
+
+Student Name Information
+Emma Futsal_Goalkeeper
+Olivia Futsal_Defender
+Isabella Futsal_Winger
+Mia Futsal_Winger
+Sophia Futsal_Pivot
+
+echo "Futsal_Goalkeeper" > Emma
+echo "Futsal_Defender" > Olivia
+echo "Futsal_Winger" > Isabella
+echo "Futsal_Winger" > Mia
+echo "Futsal_Pivot" > Sophia
+
+21. Isabella's information is read and write (rw-) only the user and user's group (not the others).
+
+  chmod 660 Isabella veya chmod u=rw,g=rw,o=- Isabella
+
+22. Go into "Futsal_Men" directory and list the content of it.
+
+ cd ../Futsal_Men
+ ls
+
+23. Create 5 files named "Robert", "Martin", "James", "Liam ", "Lucas" inside "Futsal_Men".
+
+    touch Robert Martin James Liam Lucas
+
+24. Write the students' informations using "echo" command into the files according to the table given below
+Student Name Information
+Robert Futsal_Goalkeeper
+Martin Futsal_Defender
+James Futsal_Winger
+Liam Futsal_Winger
+Lucas Futsal_Pivot
+
+echo "Futsal_Goalkeeper" > Robert
+echo "Futsal_Defender" > Martin
+echo "Futsal_Winger" > James
+echo "Futsal_Winger" > Liam
+echo "utsal_Pivot" > Lucas
+
+
+
+25. Martin's information is read and write (rw-) only the user (not the group
+s and the others).
+    chmod 600 Martin /// chmod u=rw,g=-,o=- Martin
+
+
+26. Go into "Basketball_Women" directory again from inside "Futsal_Men" directory and list the content of
+"Basketball_Women".
+ cd ../../Basketball/Basketball_Women
+  
+27. Create 4 files named "Ava", "Evelyn", "Hazel", "Bella" inside "Basketball_Women".
+
+    touch Ava Evelyn Hazel Bella
+
+28. Write the students' informations using "echo" command into the files according to the table given below
+Student Name Information
+Ava Basketball_Point-Guard
+Evelyn Basketball_Shooting-Guard
+Hazel Basketball_Center
+Bella Basketball_Small-Forward
+
+echo "Basketball_Point-Guard" > Ava
+echo "Basketball_Point-Guard" > Evelyn
+echo "Basketball_Center" > Hazel
+echo "Basketball_Small-Forward" > Bella
+
+29. Olivia plays in two teams Futsall and Basketball. Append "Basketball_Power-Forward" line into Olivia's
+information file inside "Futsal_Women" without overwrite using echo command and absolute path.
+
+echo "Basketball_Power-Forward" >>
+/home/$USER/ABC_College/Futsal/Futsal_Women/Olivia
+ ................................
+
+30. Get Olivia's information file from inside "Futsal_Women" directory using "cp" command and relative path.
+
+    cp ../../Futsal/Futsal_Women/Olivia
+
+31. List the content of current directory with details and hidden files.
+
+    ls -al
+
+32. Go into "Basketball_Men" directory using "~" (tilde).
+
+    ..........................
+
+
+33. Create 5 files named "Logan", "Jack", "Joseph", "Matthew", "David" inside "Basketball_Men".
+     touch Logan Jack Joseph Matthew David
+
+34. Write the students' informations using "echo" command into the files according to the table given below
+Student Name Information
+Logan Basketball_Point-Guard
+Jack Basketball_Shooting-Guard
+Joseph Basketball_Center
+Matthew Basketball_Power-Forward
+David Basketball_Small-Forward
+
+echo "Basketball_Point-Guard" > Logan
+echo "Basketball_Shooting-Guard" > Jack
+echo "Basketball_Center" > Joseph
+echo "Basketball_Power-Forward" > Matthew
+echo "Basketball_Small-Forward" > David
+
+
+35. List the content of current directory with details and hidden files.
+    ls -al
+
+36. David's information is read-only (r--) for everyone.
+     chmod u=r,g=r,o=r David  veya chmod 444 David
+
+
+37. Go into "Swimming_Women/Freestyle" directory using relative path.
+
+ cd ../../Swimming/Swimming_Women/Freestyle/
+
+38. Create a file named "Scarlett" and write "Swimming_Freestyle" into the file.
+    echo "Swimming_Freestyle" > Scarlett
+
+  
+39. Mia plays in two teams Futsall and Swimming. Append "Swimming_Freestyle" line into Mia's information
+file inside "Futsal_Women" without overwrite using echo command and absolute path.
+
+    echo "Swimming_Freestyle" >> /home/$USER/ABC_College/Futsal/Futsal_Women/Mia
+    
+
+40. Get Mia's information file from inside "Futsal_Women" directory using "cp" command and absolute path.
+
+     cp /home/$USER/ABC_College/Futsal/Futsal_Women/Mia   
+  
+41. Go into "Butterfly" directory.
+    cd ../Butterfly
+
+42. Create a file named "Ellie" and write "Swimming_Butterfly" into the file.
+    echo "Swimming_Butterfly" > Ellie
+
+43. Emma plays in two teams Futsall and Swimming. Append "Swimming_Butterfly" line into Emma's
+information file inside "Futsal_Women" without overwrite using echo command and absolute path.
+
+    echo "Swimming_Butterfly" >> /home/$USER/ABC_College/Futsal/Futsal_Women/Emma
+
+44. Get Emma's information file from inside "Futsal_Women" directory using "cp" command and absolute
+path.
+    cp /home/$USER/ABC_College/Futsal/Futsal_Women/Emma .
+
+45. Go into "Swimmming_Men/Freestyle" directory using relative path.
+
+    cd ../../Swimming_Men/Freestyle
+
+46. Create a file named "Carter" using only "echo" command and write into the file "Swimming_Freestyle".
+    
+      echo "Swimming_Freestyle" > Carter
+
+47. Robert in Futsal and Joseph in Basketball play in Swimming Team also. Append "Swimming_Freestyle" line
+into the information files inside "Futsal_Men" and "Basketball_Men" without overwrite using echo command
+and absolute path.
+    	echo "Swimming_Freestyle" >> /home/$USER/ABC_College/Futsal/Futsal_Men/Robert
+	echo "Swimming_Freestyle" >>
+	/home/$USER/ABC_College/Basketball/Basketball_Men/Joseph
+
+48. Get Robert and Joseph's information file from inside "Futsal_Men" and "Basketball_Men" directories using
+"cp" command and absolute path.
+
+    	cp /home/$USER/ABC_College/Futsal/Futsal_Men/Robert .
+	cp /home/$USER/ABC_College/Basketball/Basketball_Men/Josep
+
+49. Go into "Swimmming_Men/Butterfly" directory using relative path.
+
+         cd ../../Swimming_Men/Butterfly
+
+50. Create a file named "Isaac" using echo command and write into the file "Swimming_Butterfly".
+
+          echo "Swimming_Butterfly" > Isaac
+
+51. Isaac's information is read, write and executable (rwx) for only the group.
+  
+          chmod u=-,g=rwx,o=- Isaac/ chmod 070 Isaac
+
+
+52. Martin plays in two teams Futsall and Swimming. Append "Swimming_Butterfly" line into Martin's
+information file inside "Futsal_Men" without overwrite using echo command and absolute path.
+
+   echo "Swimming_Butterfly" >> /home/$USER/ABC_College/Futsal/Futsal_Men/Martin
+
+53. Get Martin's information file from inside "Futsal_Men" directory using "cp" command and relative path.
+
+    cp ../../../Futsal/Futsal_Men/Martin .
+ 
+54. Go into ABC_College directory.
+    
+    cd ~/ABC_College
+
+55. Install "tree" command via packet manager. Reqired code is below.
+
+
+For Ubuntu:
+sudo apt update
+sudo apt install tree -y
+For centOS:
+sudo yum update
+sudo yum install tree -y
+56. Run the command below.
+tree
+
+Part 2 - Basic Commands 2/2
+
+1. The administration reported that Sophia in Futsal Women's Team left from the team. Go into the
+"Futsal_Women" directory and remove Sofia from there.
+
+2. The administration reported that Mia in Futsal Women's Team left from the team and she joined Basketball
+Women's team. Move Mia's file into "Basketball_Women" directory.
+
+3. Go into Basketball_Women directory and list content of it with details and hidden files.
+
+4. Change the content of Mia's file by adding "Basketball_Small-Forward" and removing "Futsal_Winger" using
+vi editor.
+
+5. Print working directory.
+
+6. Move Ellie from Swimming Team to Futsal Women team as Futsal Winger without left current directory and
+use absolute paths.
+
+7. Go into "Futsal_Women" directory using relative path.
+
+8. Change the content of Ellie's file by adding "Futsal_Winger" and removing "Swimming_Butterfly" using nano
+editor.
+
+9. Scarlett in Swimming Team wants to play Futsal as a Pivot also. You append "Futsal_Pivot" into Scarlett's file
+using echo command.
+
+10. Copy Scarlett's file into "Futsal_Women" directory.
+
+11. Reach Martin's file in Futsal_Men and read it.
+
+12. Go into Futsal_Men directory.
+
+13. Print working directory.
+
+14. List students in Futsal Men Team whose names begin with the letter "L".
+
+15. List students in Futsal Men Team who have the letter "m" in their name.
+
+16. Go into "Basketball_Women" directory using ~ (tilde).
+
+16. You noticed that you wrote the name of Eve in the basketball team as Ava. Correct the name of Eve.
+
+17. List the content of current directory with details and hidden files.
+
+18. Use tree command in ABC_College directory.
+
+19. Attention please! Finally, remove ABC_College directory.
+
+20. Exit from the terminal
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
