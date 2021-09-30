@@ -1,0 +1,98 @@
+1.
+SELECT CategoryName, Description
+FROM Category
+ORDER BY CategoryName;
+
+ 2.
+SELECT FirstName, LastName, HireDate
+ FROM Employees
+ ORDER BY HireDate DESC;
+
+ 3.
+SELECT CompanyName, Fax, Phone, HomePage, Country
+ FROM Supplier
+ ORDER BY Country DESC, CompanyName ASC;
+
+4.
+SELECT CompanyName, ContactName
+FROM Customers
+WHERE City = ‘Buenos Aires’;
+
+5.
+SELECT ProductName, UnitPrice, QuantityPerUnit
+FROM Product
+WHERE UnitsInStock = 0;
+
+6.
+SELECT OrderDate, ShippedDate, CustomerId, Freight
+FROM Orders
+WHERE OrderDate = ‘2012-07-19’;
+
+7.
+SELECT FirstName, LastName, Country
+FROM Employees
+WHERE NOT IN Country = "USA";
+
+8.
+SELECT EmployeeId, OrderId, CustomerId, ShippedDate, RequiredDate
+FROM Orders
+WHERE ShippedDate > RequiredDate;
+
+9.
+SELECT CompanyName, ContactName, Fax
+FROM Customers
+WHERE Fax IS NOT NULL
+ORDER BY CompanyName;
+
+10.
+SELECT City, CompanyName, ContactName
+FROM Customers
+WHERE City LIKE “A%” or City LIKE “B%”
+ORDER BY ContactName DESC;
+
+11.
+SELECT FirstName, LastName, BirthDate
+FROM Employees
+WHERE BirthDate BETWEEN ‘1980-01-01’ AND ‘1989-12-31’;
+
+12.
+SELECT ProductName, SupplierId
+FROM Product
+WHERE SupplierId IN (SELECT SupplierId
+ FROM Supplier
+ WHERE CompanyName IN ("Exotic Liquids", "Grandma Kelly's Homestead", "Tokyo Traders"));
+SELECT p.ProductName, p.SupplierId
+FROM Product p
+JOIN Supplier s ON p.SupplierId=s.SupplierId
+WHERE s.CompanyName IN ("Exotic Liquids", "Grandma Kelly's Homestead", "Tokyo Traders");
+
+13.
+SELECT ContactName, ContactTitle, CompanyName
+FROM Customers
+WHERE ContactTitle NOT LIKE “%Sales%“;
+
+14.
+SELECT CompanyName, ContactTitle, City, Country
+FROM Customers
+WHERE Country IN ('Mexico', 'Spain') AND city <> 'Madrid';
+
+15.
+SELECT lower("ContactTitle") as lowertitle
+ FROM Customers;
+
+16.
+SELECT ProductName
+FROM Product
+WHERE CategoryId = (SELECT CategoryId
+FROM Category
+WHERE CategoryName = ‘Seafood’);
+SELECT p.ProductName
+FROM Product p
+INNER JOIN Category c ON p.CategoryId = c.CategoryId
+WHERE c.CategoryName = 'Seafood';
+
+17.
+SELECT p.ProductId, SUM(o.Quantity) AS total_quantity
+FROM OrderDetail o JOIN Product p ON o.ProductId=p.ProductId
+GROUP BY p.ProductId
+HAVING total_quantity < 200;
